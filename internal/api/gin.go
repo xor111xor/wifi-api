@@ -2,11 +2,11 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/xor111xor/wifi-api/internal/repository"
+	"github.com/xor111xor/wifi-api/internal/models"
 	"net/http"
 )
 
-func RunApi(repo *repository.InMemoryRepo) {
+func RunApi(repo models.Repo) error {
 	// Create Gin router
 	router := gin.Default()
 
@@ -19,15 +19,16 @@ func RunApi(repo *repository.InMemoryRepo) {
 	// Start the server
 	err := router.Run()
 	if err != nil {
-		panic(err)
+		return err
 	}
+	return nil
 }
 
 type RecipesHandler struct {
-	store *repository.InMemoryRepo
+	store models.Repo
 }
 
-func NewRecipesHandler(s *repository.InMemoryRepo) *RecipesHandler {
+func NewRecipesHandler(s models.Repo) *RecipesHandler {
 	return &RecipesHandler{
 		store: s,
 	}
