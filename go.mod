@@ -3,8 +3,10 @@ module github.com/xor111xor/wifi-api
 go 1.21.5
 
 require (
+	github.com/boltdb/bolt v1.3.1
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-co-op/gocron v1.36.1
+	github.com/mattn/go-sqlite3 v1.14.19
 )
 
 require (
@@ -31,7 +33,7 @@ require (
 	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/crypto v0.9.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.8.0 // indirect
+	golang.org/x/sys v0.12.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

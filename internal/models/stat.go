@@ -14,6 +14,7 @@ var (
 )
 
 type Metric struct {
+	ID         int
 	TimeScrape time.Time `json:"time"`
 	Ssid       string    `json:"ssid"`
 	Received   uint      `json:"received_mb"`
