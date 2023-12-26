@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func Run() error {
+func Run(cron *string) error {
 	repo, err := GetRepo()
 	if err != nil {
 		return err
@@ -16,7 +16,7 @@ func Run() error {
 
 	// Get metrics every minute
 	s := gocron.NewScheduler(time.UTC)
-	_, err = s.Cron("*/1 * * * *").Do(func() error {
+	_, err = s.Cron(*cron).Do(func() error {
 		err := metric.SetMetric()
 		if err != nil {
 			return err
