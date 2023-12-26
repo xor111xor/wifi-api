@@ -3,6 +3,11 @@ Rest api for get wifi statistic
 
 ![image info](./img.png)
 
+On build choise storage inmemory, sqlite or boltdb.
+Example
+```bash
+go build -tags=boltdb .
+```
 
 Use curl for get result
 ```bash
